@@ -1,0 +1,10 @@
+// Steps for syncing image directories from lib-gissystem to libimages (Loris)
+
+sudo mkdir /mnt/gbl
+sudo mount -t nfs 128.112.201.250:/gbl /mnt/gbl
+sudo su pudl
+rsync -vah /mnt/gbl/images/pairtree_root/ /data/jp2s/pulmap/
+sudo umount /mnt/gbl
+
+optional:
+watch "ls -rtx /data/jp2s/pulmap | tail -n $(($LINES - 2))"
