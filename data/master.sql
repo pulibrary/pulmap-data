@@ -11,7 +11,7 @@ CREATE TABLE "full" (
 	`bbox_source`	TEXT,
 	`bbox`	TEXT,
 	`needs_reload`	TEXT,
-	`field10`	TEXT,
+	`ingested`	TEXT,
 	`bib_id`	TEXT,
 	`title`	TEXT,
 	`link`	TEXT
