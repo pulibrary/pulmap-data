@@ -3,7 +3,10 @@
 sudo mkdir /mnt/gbl
 sudo mount -t nfs 128.112.201.250:/gbl /mnt/gbl
 sudo su pudl
-rsync -vah /mnt/gbl/images/pairtree_root/ /data/jp2s/pulmap/
+rsync -va --include="**/00000001.jp2"  --exclude=*.* /mnt/gbl/pulmap/data/pairtree_root/ /data/jp2s/pulmap/
+
+# or, careful
+# rsync -va --dry-run --delete --include="**/00000001.jp2"  --exclude=*.* /mnt/gbl/pulmap/data/pairtree_root/ /data/jp2s/pulmap/ 
 sudo umount /mnt/gbl
 
 optional:
